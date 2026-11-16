@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelance Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header>
+            <h1>Freelance Dashboard</h1>
+            <p>Manage your clients and projects locally.</p>
+        </header>
+
+        <!-- Form for Create / Update -->
+        <section class="form-section">
+            <h2 id="form-title">Add New Client / Project</h2>
+            <form id="entry-form">
+                <input type="hidden" id="entry-id">
+                <input type="text" id="client-name" placeholder="Client Name" required>
+                <input type="text" id="project-name" placeholder="Project Name" required>
+                <input type="number" id="budget" placeholder="Budget ($)" required>
+                <select id="status">
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                </select>
+                <button type="submit" id="submit-btn">Add Entry</button>
+                <button type="button" id="cancel-btn" style="display:none;">Cancel</button>
+            </form>
+        </section>
+
+        <!-- Data Table (Read) -->
+        <section class="table-section">
+            <h2>Current Projects</h2>
+            <div class="table-wrapper">
+                <table id="entries-table">
+                    <thead>
+                        <tr>
+                            <th>Client</th>
+                            <th>Project</th>
+                            <th>Budget</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="entries-body">
+                        <!-- Rows injected by JS -->
+                    </tbody>
+                </table>
+            </div>
+            <p id="empty-msg" style="display:none; text-align:center; padding:20px;">No entries yet. Add one above!</p>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
